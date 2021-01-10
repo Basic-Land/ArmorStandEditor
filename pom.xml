@@ -17,6 +17,10 @@
             <id>spigot-repo</id>
             <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
         </repository>
+        <repository>
+            <id>dev-private</id>
+            <url>http://nexus.basicland.cz:8081/repository/dev-private/</url>
+        </repository>
     </repositories>
 
     <dependencies>
@@ -25,6 +29,13 @@
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
             <version>1.16.1-R0.1-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.bgsoftware.superiorskyblock</groupId>
+            <artifactId>SuperiorSkyblockPlugin</artifactId>
+            <version>1.4.5</version>
             <scope>provided</scope>
         </dependency>
 

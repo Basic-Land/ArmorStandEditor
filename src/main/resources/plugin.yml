@@ -1,4 +1,4 @@
-name: ArmorStandEditor
+name: bArmorStandEditor
 main: io.github.rypofalem.armorstandeditor.ArmorStandEditorPlugin
 version: 1.16-24
 api-version: "1.13"

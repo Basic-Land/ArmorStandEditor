@@ -19,6 +19,9 @@
 
 package io.github.rypofalem.armorstandeditor;
 
+import com.bgsoftware.superiorskyblock.api.SuperiorSkyblockAPI;
+import com.bgsoftware.superiorskyblock.api.island.Island;
+import com.bgsoftware.superiorskyblock.api.wrappers.SuperiorPlayer;
 import io.github.rypofalem.armorstandeditor.menu.ASEHolder;
 import org.bukkit.*;
 import org.bukkit.entity.ArmorStand;
@@ -174,6 +177,18 @@ public class PlayerEditorManager implements Listener{
 	}
 
 	boolean canEdit(Player player, ArmorStand as){
+		if (Bukkit.getPluginManager().isPluginEnabled("SuperiorSkyblock2")) {
+			Island island = SuperiorSkyblockAPI.getIslandAt(player.getLocation());
+
+			if (island != null) {
+				SuperiorPlayer sp = SuperiorSkyblockAPI.getPlayer(player);
+
+				if (!island.isMember(sp) && !island.isCoop(sp) && !sp.hasBypassModeEnabled()) {
+					return false;
+				}
+			}
+		}
+
 		ignoreNextInteract = true;
 		ArrayList<Event> events = new ArrayList<>();
 		events.add(new PlayerInteractEntityEvent(player, as, EquipmentSlot.HAND));
