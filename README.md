@@ -1,3 +1,4 @@
+```
 /as
 /as info
 /as clear
@@ -13,3 +14,4 @@
 /as holo copy <jmeno z> <jmeno na>
 /as holo near <radius>
 /as cmd lines list - Editor textu ArmorStandu
+```
